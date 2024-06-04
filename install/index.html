@@ -1,0 +1,625 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../start/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Installation - DeepMASS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#system-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DeepMASS" class="md-header__button md-logo" aria-label="DeepMASS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DeepMASS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DeepMASS" class="md-nav__button md-logo" aria-label="DeepMASS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    DeepMASS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-models-with-nist-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training models with NIST data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Training models with NIST data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-nist-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exporting NIST data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessing-nist-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocessing NIST data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-the-word2vec-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training the Word2Vec model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-spectral-representation-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating spectral representation index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replacing-the-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replacing the data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-models-with-nist-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training models with NIST data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Training models with NIST data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-nist-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exporting NIST data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessing-nist-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocessing NIST data
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training-the-word2vec-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training the Word2Vec model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-spectral-representation-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generating spectral representation index
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#replacing-the-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Replacing the data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Installation</h1>
+
+<div><h2 id="system-requirements">System Requirements</h2>
+<p><strong>Operating Systems:</strong>
+- Windows 11
+- MacOS</p>
+<p><strong>Recommended Hardware:</strong>
+- Intel Core i5 or greater
+- 16 GB RAM or more
+- 5 GB hard drive space</p>
+<h2 id="installation-steps">Installation Steps</h2>
+<ol>
+<li>Install <a href="https://www.anaconda.com/">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>.</li>
+<li>
+<p>Create a new conda environment and activate:</p>
+<p><code>bash
+conda create -n deepmass python=3.8.13
+conda activate deepmass</code></p>
+</li>
+<li>
+<p>Clone the repository and enter:</p>
+<p><code>bash
+git clone https://github.com/hcji/DeepMASS2_GUI.git
+cd DeepMASS2_GUI</code></p>
+</li>
+<li>
+<p>Install dependencies (for <em>MacOS</em>, some dependencies may need manual installation with conda):</p>
+<p><code>bash
+pip install -r requirements.txt</code></p>
+</li>
+<li>
+<p>Download the <a href="https://github.com/hcji/DeepMASS2_GUI/releases/tag/v0.99.2">dependent data</a>.</p>
+<ul>
+<li>
+<p>Put the following files into the <em>data</em> folder:</p>
+<p><code>DeepMassStructureDB-v1.0.csv
+references_index_negative_spec2vec.bin
+references_index_positive_spec2vec.bin
+references_spectrums_negative.pickle
+references_spectrums_positive.pickle</code></p>
+</li>
+<li>
+<p>Put the following files into the <em>model</em> folder:</p>
+<p><code>Ms2Vec_allGNPSnegative.hdf5
+Ms2Vec_allGNPSnegative.hdf5.syn1neg.npy
+Ms2Vec_allGNPSnegative.hdf5.wv.vectors.npy
+Ms2Vec_allGNPSpositive.hdf5
+Ms2Vec_allGNPSpositive.hdf5.syn1neg.npy
+Ms2Vec_allGNPSpositive.hdf5.wv.vectors.npy</code></p>
+</li>
+</ul>
+<p>Please note that these dependent data are based on the GNPS dataset only. If you have licence of NIST software,
+please refer the next section: <strong>Training models with NIST data</strong> </p>
+</li>
+<li>
+<p>Run DeepMASS:</p>
+<p><code>bash
+python DeepMASS2.py</code></p>
+</li>
+</ol>
+<h2 id="training-models-with-nist-data">Training models with NIST data</h2>
+<p>The <a href="https://www.nist.gov/programs-projects/nist20-updates-nist-tandem-and-electron-ionization-spectral-libraries">NIST MS/MS Library</a> is not available for download directly, 
+but can be purchased from an authorized distributor and exported using the instructions below.</p>
+<h3 id="exporting-nist-data">Exporting NIST data</h3>
+<p><em>Note: this step requires a Windows System or Virtual Machine.</em>
+The spectra and associated compounds can be exported to MSP/MOL format using the free <a href="https://chemdata.nist.gov/mass-spc/ms-search/Library_conversion_tool.html">lib2nist software</a>. 
+The resulting export will contain a single MSP file with all of the mass spectra, 
+and multiple MOL files which include the molecular structure information (linked to the spectra by ID). 
+The screenshot below indicates appropriate lib2nist export settings.</p>
+<p><a href="https://postimg.cc/QVYxBHxs"><img alt="nist-export.png" src="https://i.postimg.cc/c40KbnpK/nist-export.png"></a></p>
+<p>After exporting the files, create a directory on your primary computer and save them there. 
+If done correctly, inside "nist_20" there should be a single .MSP file with all the spectra, 
+<code>hr_nist_msms.MSP</code>, and a directory of .MOL files, <code>hr_nist_msms.MOL</code>.</p>
+<h3 id="preprocessing-nist-data">Preprocessing NIST data</h3>
+<p>Refer the <a href="https://github.com/hcji/DeepMASS2_GUI/blob/main/scripts/Processing_NIST20_data.ipynb">Python script</a> 
+processes mass spectrometry (MS/MS) data and corresponding chemical structures 
+to extract and clean metadata, filter the data based on adduct types, and organize the data for further analysis. </p>
+<h3 id="training-the-word2vec-model">Training the Word2Vec model</h3>
+<p>Refer the <a href="https://github.com/hcji/DeepMASS2_GUI/blob/main/scripts/Traning_Spec2vec_Model.ipynb">Python script</a> 
+processes mass spectrometry (MS/MS) data to train word2vec models for positive and negative ion mode 
+spectra using the spec2vec approach.This script ultimately creates two spec2vec models: one for positive 
+ion mode spectra and one for negative ion mode spectra. </p>
+<h3 id="generating-spectral-representation-index">Generating spectral representation index</h3>
+<p>Refer the <a href="https://github.com/hcji/DeepMASS2_GUI/blob/main/scripts/Vectorize_Spectra.ipynb">Python script</a> 
+processes mass spectrometry (MS/MS) data to compute vector representations of spectra using a pre-trained 
+word2vec model, and then indexes these vectors for fast similarity searching using the HNSW 
+algorithm. It handles both positive and negative ion mode spectra. This script ultimately creates and saves 
+HNSW indices for fast similarity searching of positive and negative ion mode spectra using the spec2vec vector 
+representations.</p>
+<h3 id="replacing-the-data">Replacing the data</h3>
+<p>Copy all the generated files into corresponding folder of DeepMASS, refer the installation step 5.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+    
+  </body>
+</html>
