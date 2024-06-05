@@ -316,6 +316,24 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#export-msms-file-from-ms-dial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export MS/MS file from MS-DIAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-msms-file-from-xcms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export MS/MS file from XCMS
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -429,6 +447,24 @@
   <a href="#output-file-format" class="md-nav__link">
     <span class="md-ellipsis">
       Output File Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-msms-file-from-ms-dial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export MS/MS file from MS-DIAL
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#export-msms-file-from-xcms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Export MS/MS file from XCMS
     </span>
   </a>
   
@@ -740,7 +776,58 @@ structure, and scores related to formula and structure predictions.</p>
 <td>0.7234333285452084</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h3 id="export-msms-file-from-ms-dial">Export MS/MS file from MS-DIAL</h3>
+<p>To export an MGF (Mascot Generic Format) file from MS-DIAL processing results, follow these steps:</p>
+<p><a href="https://postimg.cc/RWX6s8Zt"><img alt="ms-dial-1.png" src="https://i.postimg.cc/CKVG1pyc/ms-dial-1.png"></a></p>
+<p>A) Peak list export
+B) Alignment result export
+C) Molecular spectrum networking export
+D) Copy screenshot to clipboard (emf)
+E) Parameter export (Tab-delimited text) F) Export as lipoquality database format
+G) Export normalization result</p>
+<p><a href="https://postimg.cc/GTKdLWNJ"><img alt="ms-dial-2.png" src="https://i.postimg.cc/c6yHmZBj/ms-dial-2.png"></a></p>
+<p>A) Peak list export: You can get the peak list information of each sample including retention time, m/z, MS/MS spectra information, and so on. Available formats are MSP, MGF or Text.</p>
+<p>Step1. Choose an export folder path.
+Step2. Choose files which you want to export and click button "Add -&gt;".
+Step3. Select export format.
+Step4. Click the export button.</p>
+<p><a href="https://postimg.cc/SJQz6ky4"><img alt="ms-dial-3.png" src="https://i.postimg.cc/4NVbTxqY/ms-dial-3.png"></a></p>
+<p>B) Alignment result export: You can get data matrix or spectral information.</p>
+<p>Step1. Choose an export folder path.
+Step2. Choose an alignment file which you want to export.
+Step3. Select export format if you want to export the representative spectra.
+Step4. Click the export button.</p>
+<h3 id="export-msms-file-from-xcms">Export MS/MS file from XCMS</h3>
+<p>To export MS/MS data into an MGF (Mascot Generic Format) file from XCMS result, we can use the combineSpectra function. 
+For more details see the documentation of the consensusSpectrum function in the MSnbase R package. Refer this script to define 
+a function exportSpectraToMGF to convert the spectra data into MGF format.</p>
+<pre><code>    exportSpectraToMGF &lt;- function(spectra, file) {
+        mgf_data &lt;- lapply(spectra, function(sp) {
+            list(
+                TITLE = paste("Scan", sp@scanIndex),
+                RTINSECONDS = sp@rtime,
+                PEPMASS = c(sp@precursorMz, sp@precursorIntensity),
+                CHARGE = sp@precursorCharge,
+                MZ = sp@mz,
+                INTENSITY = sp@intensity
+            )
+        })
+        con &lt;- file(file, "w")
+        for (spectrum in mgf_data) {
+            cat("BEGIN IONS\n", file = con)
+            cat(paste("TITLE=", spectrum$TITLE, sep = ""), "\n", file = con)
+            cat(paste("RTINSECONDS=", spectrum$RTINSECONDS, sep = ""), "\n", file = con)
+            cat(paste("PEPMASS=", paste(spectrum$PEPMASS, collapse = " "), sep = ""), "\n", file = con)
+            cat(paste("CHARGE=", spectrum$CHARGE, sep = ""), "\n", file = con)
+            for (i in seq_along(spectrum$MZ)) {
+                cat(paste(spectrum$MZ[i], spectrum$INTENSITY[i], sep = " "), "\n", file = con)
+            }
+            cat("END IONS\n\n", file = con)
+        }
+        close(con)
+    }
+</code></pre></div>
 
 
 
