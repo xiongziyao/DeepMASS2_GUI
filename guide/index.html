@@ -262,6 +262,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input File Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input File Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mgf-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      MGF File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msp-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSP File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mat-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      MAT File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output File Format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -323,6 +380,63 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="User Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input File Format
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input File Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mgf-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      MGF File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msp-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSP File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mat-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      MAT File
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-file-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output File Format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -342,7 +456,177 @@
 
   <h1>User Guide</h1>
 
-<h2 id="user-guide">User Guide</h2>
+<div><h2 id="user-guide">User Guide</h2>
+<h3 id="input-file-format">Input File Format</h3>
+<h4 id="mgf-file">MGF File</h4>
+<p>DeepMASS accepts <strong>mgf</strong> files containing one or multiple MS/MS spectra. The Mascot Generic Format (MGF) 
+is a standard file format used to store mass spectrometry (MS) data, particularly tandem mass spectrometry (MS/MS) data.    </p>
+<p>Structure of MGF Files:    </p>
+<ul>
+<li><strong>Header Information:</strong> Optional metadata about the MS data, including instrument parameters, acquisition settings, and other experimental details.</li>
+<li><strong>BEGIN IONS:</strong> Marks the beginning of the MS/MS data section.</li>
+<li><strong>Spectrum Information:</strong> Parameters and a list of mass-to-charge ratio (m/z) and intensity pairs.</li>
+<li><strong>Peak Data:</strong> Describes the mass spectrum with m/z and intensity pairs.</li>
+<li><strong>END IONS:</strong> Marks the end of the MS/MS data section for a specific spectrum.</li>
+</ul>
+<p>Essential DeepMASS input information includes:    </p>
+<ul>
+<li><strong>CHARGE:</strong> Number of charges of the precursor ion.</li>
+<li><strong>PRECURSOR_MZ:</strong> Precursor ion's mass-to-charge ratio.</li>
+<li><strong>COMPOUND_NAME:</strong> Identifier for the compound.</li>
+<li><strong>IONMODE:</strong> Ionization mode of the precursor ion.</li>
+<li><strong>ADDUCT:</strong> Type of adduct of the precursor ion.</li>
+</ul>
+<p>At least one of the following is necessary for DeepMASS inputs:    </p>
+<ul>
+<li><strong>FORMULA:</strong> Molecular formula of the compound.</li>
+<li><strong>PARENT_MASS:</strong> Monoisotopic mass of the compound.</li>
+</ul>
+<p>Here's a simplified example of an MGF file:</p>
+<pre><code>    BEGIN IONS
+    CHARGE=1-
+    PRECURSOR_MZ=194.04588176800002
+    COMPOUND_NAME=challenge_255
+    CHALLENGE=CASMI2016_Challenge-006
+    FORMULA=C9H9NO4
+    SMILES=CC(=O)NC1=CC=C(O)C(=C1)C(O)=O
+    INCHIKEY=GEFDRROBUCULOD-UHFFFAOYSA-N
+    ADDUCT=[M-H]-
+    IONMODE=negative
+    PARENT_MASS=195.053157768
+    132.0454 0.006008828855732822 
+    134.0245 0.0022295306804225633 
+    149.0483 0.00297960480724686 
+    150.056 1.0 
+    194.0459 0.36915136378467533 
+    END IONS
+
+    BEGIN IONS
+    CHARGE=1+
+    PRECURSOR_MZ=223.970551912
+    COMPOUND_NAME=challenge_368
+    CHALLENGE=CASMI2016_Challenge-119
+    FORMULA=C9H6BrNO
+    SMILES=BrC1=CC2=C(NC(=O)C=C2)C=C1
+    INCHIKEY=YLAFBGATSQRSTB-UHFFFAOYSA-N
+    ADDUCT=[M+H]+
+    IONMODE=positive
+    PARENT_MASS=222.963275912
+    127.0418 0.01388754827761238 
+    145.0524 0.0058134492435322465 
+    205.9602 0.1043324271433068 
+    223.9708 1.0 
+    END IONS
+</code></pre>
+<h4 id="msp-file">MSP File</h4>
+<p>DeepMASS also accepts <strong>msp</strong> files, which contain one or multiple MS/MS spectra.    </p>
+<p>Structure of MSP Files:    </p>
+<ul>
+<li><strong>Name</strong>: A descriptor or identifier for the spectrum, often the compound name.</li>
+<li><strong>Num Peaks</strong>: The number of mass-to-charge ratio (m/z) and intensity pairs that follow.</li>
+<li><strong>Peak Data</strong>: Describes the mass spectrum with m/z and intensity pairs listed.</li>
+</ul>
+<p>Essential DeepMASS input information includes:    </p>
+<ul>
+<li><strong>CHARGE:</strong> Number of charges of the precursor ion.</li>
+<li><strong>PRECURSOR_MZ:</strong> Precursor ion's mass-to-charge ratio.</li>
+<li><strong>COMPOUND_NAME:</strong> Identifier for the compound.</li>
+<li><strong>IONMODE:</strong> Ionization mode of the precursor ion.</li>
+<li><strong>ADDUCT:</strong> Type of adduct of the precursor ion.</li>
+</ul>
+<p>At least one of the following is necessary for DeepMASS inputs:    </p>
+<ul>
+<li><strong>FORMULA:</strong> Molecular formula of the compound.</li>
+<li><strong>PARENT_MASS:</strong> Monoisotopic mass of the compound.</li>
+</ul>
+<p>Here's a simplified example of an MSP file with multiple spectra:   </p>
+<pre><code>    Name: challenge_255
+    PrecursorMZ: 194.04588176800002
+    ExactMass: 195.053157768
+    Formula: C9H9NO4
+    Ion_mode: negative
+    Adduct: [M-H]-
+    Num Peaks: 5
+    132.0454 0.0060
+    134.0245 0.0022
+    149.0483 0.0030
+    150.0560 1.0
+    194.0459 0.3692
+
+    Name: challenge_368
+    PrecursorMZ: 223.970551912
+    ExactMass: 222.963275912
+    Formula: C9H6BrNO
+    Ion_mode: positive
+    Adduct: [M+H]+
+    Num Peaks: 4
+    127.0418 0.0139
+    145.0524 0.0058
+    205.9602 0.1043
+    223.9708 1.0
+</code></pre>
+<h4 id="mat-file">MAT File</h4>
+<p>DeepMASS accepts <strong>mat</strong> files which contain detailed information about MS/MS spectra. The file format is 
+the same as <em>MS-Finder</em> used, which also contains isotopical information.    </p>
+<p>Here's a simplified example of an MAT file with multiple spectra:  </p>
+<pre><code>    NAME: L-Glutamic acid
+    SCANNUMBER: 1228
+    RETENTIONTIME: 5.8845
+    PRECURSORMZ: 148.0424
+    PRECURSORTYPE: [M+H]+
+    IONMODE: Positive
+    SPECTRUMTYPE: Profile
+    INTENSITY: 10818.72
+    FORMULA: C5H9NO4
+    ONTOLOGY: 
+    INCHIKEY: WHUUTDBJXJRKMK-VKHMYHEASA-N
+    SMILES: 
+    MSTYPE: MS1
+    Num Peaks: 5
+    148.04244   17967
+    149.04424   1255
+    150.03773   1096
+    151.04014   113
+    152.07201   68
+    MSTYPE: MS2
+    Num Peaks: 7
+    44.97939    304
+    61.00939    32
+    73.78966    70
+    74.00583    7225
+    76.82613    13
+    87.01311    80
+    120.01151   988
+</code></pre>
+<h3 id="output-file-format">Output File Format</h3>
+<p>The output is CSV file contains information about ranked annotated chemical structures. 
+The columns provide details about each compound, including its title, molecular formula, 
+structure, and scores related to formula and structure predictions.</p>
+<p>Columns Description:   </p>
+<ul>
+<li><strong>Title</strong>: The name of the compound.</li>
+<li><strong>MolecularFormula</strong>: The molecular formula of the compound, indicating the number and type of atoms present.</li>
+<li><strong>CanonicalSMILES</strong>: The Canonical Simplified Molecular Input Line Entry System (SMILES) string, representing the structure of the compound.</li>
+<li><strong>InChIKey</strong>: The International Chemical Identifier Key, a unique alphanumeric string to identify the compound.</li>
+<li><strong>Database IDs</strong>: Identifiers from various databases where the compound is registered.</li>
+<li><strong>Formula Score</strong>: A score indicating the accuracy or confidence in the predicted molecular formula.</li>
+<li><strong>Structure Score</strong>: A score indicating the accuracy or confidence in the predicted molecular structure.</li>
+<li><strong>Consensus Score</strong>: An overall score combining the formula and structure scores, reflecting the overall confidence in the compound identification.</li>
+</ul>
+<p>Here's a simplified example of an output file:  </p>
+<pre><code>|  | Title                                | MolecularFormula | CanonicalSMILES     | InChIKey                     | Database IDs                               | Formula Score | Structure Score     | Consensus Score       |
+|--|--------------------------------------|------------------|---------------------|------------------------------|--------------------------------------------|----------------|----------------------|------------------------|
+| 0 | "Acetic acid N',N'-dimethylhydrazide" | C4H10N2O          | CC(=O)NN(C)C         | SLIKWWJXVUHCPJ-UHFFFAOYSA-N  | NIST:CAS6233041                            | 1.0            | 0.9999999991779194   | 0.9999999994245434     |
+| 1 | N-(2-Aminoethyl)acetamide            | C4H10N2O          | CC(=O)NCCN           | DAKZISABEDGGSV-UHFFFAOYSA-N  | PMHub:MS000036761                          | 1.0            | 0.957735969543063    | 0.970415178680144      |
+| 2 | N-Propylurea                         | C4H10N2O          | CCCNC(N)=O           | ZQZJKHIIQFPZCS-UHFFFAOYSA-N  | BloodExp:CID12303;;HMDB0255240             | 1.0            | 0.940423010788881    | 0.9582961075522167     |
+| 3 | "2-Amino-N,N-dimethylacetamide"      | C4H10N2O          | CN(C)C(=O)CN         | KNVRBEGQERGQRP-UHFFFAOYSA-N  | NIST:CAS1857198                            | 1.0            | 0.8933594423863824   | 0.9253516096704677     |
+| 4 | 4-Aminobutanamide                    | C4H10N2O          | NCCCC(N)=O           | WCVPFJVXEXJFLB-UHFFFAOYSA-N  | NIST:CAS3251089                            | 1.0            | 0.8222707059586819   | 0.8755894941710773     |
+| 5 | "1,1,3-Trimethylurea"                | C4H10N2O          | CNC(=O)N(C)C         | COSWCAGTKRUTQV-UHFFFAOYSA-N  | NIST:CAS632144                             | 1.0            | 0.7851222117039512   | 0.8495855481927659     |
+| 6 | Methylpropylnitrosamine              | C4H10N2O          | CCCN(C)N=O           | ITBDKUCVKYSWMF-UHFFFAOYSA-N  | BloodExp:CID13545                          | 1.0            | 0.7422341116397019   | 0.8195638781477912     |
+| 7 | (2S)-2-(Methylamino)propanamide      | C4H10N2O          | CN[C@@H](C)C(N)=O    | QKNFFJHHPCWXTH-VKHMYHEASA-N  | NIST:CAS55988120                           | 1.0            | 0.7230225309588504   | 0.8061157716711953     |
+| 8 | N-nitrosodiethylamine                | C4H10N2O          | CCN(CC)N=O           | WBNQDOYYEUMPFS-UHFFFAOYSA-N  | CHEBI:34873;;BloodExp:CID5921;;C14422;;PMHub:MS000007343;;DTXSID2021028 | 1.0 | 0.7174501691978581 | 0.8022151184385007     |
+| 9 | ISOPROPYLUREA                        | C4H10N2O          | CC(C)NC(=N)O         | LZMATGARSSLFMQ-UHFFFAOYSA-N  | PMHub:MS000231594;;NIST:CAS691601          | 1.0            | 0.6049047550645834   | 0.7234333285452084     |
+</code></pre></div>
 
 
 
