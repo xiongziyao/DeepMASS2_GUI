@@ -614,19 +614,133 @@ structure, and scores related to formula and structure predictions.</p>
 <li><strong>Consensus Score</strong>: An overall score combining the formula and structure scores, reflecting the overall confidence in the compound identification.</li>
 </ul>
 <p>Here's a simplified example of an output file:  </p>
-<pre><code>|  | Title                                | MolecularFormula | CanonicalSMILES     | InChIKey                     | Database IDs                               | Formula Score | Structure Score     | Consensus Score       |
-|--|--------------------------------------|------------------|---------------------|------------------------------|--------------------------------------------|----------------|----------------------|------------------------|
-| 0 | "Acetic acid N',N'-dimethylhydrazide" | C4H10N2O          | CC(=O)NN(C)C         | SLIKWWJXVUHCPJ-UHFFFAOYSA-N  | NIST:CAS6233041                            | 1.0            | 0.9999999991779194   | 0.9999999994245434     |
-| 1 | N-(2-Aminoethyl)acetamide            | C4H10N2O          | CC(=O)NCCN           | DAKZISABEDGGSV-UHFFFAOYSA-N  | PMHub:MS000036761                          | 1.0            | 0.957735969543063    | 0.970415178680144      |
-| 2 | N-Propylurea                         | C4H10N2O          | CCCNC(N)=O           | ZQZJKHIIQFPZCS-UHFFFAOYSA-N  | BloodExp:CID12303;;HMDB0255240             | 1.0            | 0.940423010788881    | 0.9582961075522167     |
-| 3 | "2-Amino-N,N-dimethylacetamide"      | C4H10N2O          | CN(C)C(=O)CN         | KNVRBEGQERGQRP-UHFFFAOYSA-N  | NIST:CAS1857198                            | 1.0            | 0.8933594423863824   | 0.9253516096704677     |
-| 4 | 4-Aminobutanamide                    | C4H10N2O          | NCCCC(N)=O           | WCVPFJVXEXJFLB-UHFFFAOYSA-N  | NIST:CAS3251089                            | 1.0            | 0.8222707059586819   | 0.8755894941710773     |
-| 5 | "1,1,3-Trimethylurea"                | C4H10N2O          | CNC(=O)N(C)C         | COSWCAGTKRUTQV-UHFFFAOYSA-N  | NIST:CAS632144                             | 1.0            | 0.7851222117039512   | 0.8495855481927659     |
-| 6 | Methylpropylnitrosamine              | C4H10N2O          | CCCN(C)N=O           | ITBDKUCVKYSWMF-UHFFFAOYSA-N  | BloodExp:CID13545                          | 1.0            | 0.7422341116397019   | 0.8195638781477912     |
-| 7 | (2S)-2-(Methylamino)propanamide      | C4H10N2O          | CN[C@@H](C)C(N)=O    | QKNFFJHHPCWXTH-VKHMYHEASA-N  | NIST:CAS55988120                           | 1.0            | 0.7230225309588504   | 0.8061157716711953     |
-| 8 | N-nitrosodiethylamine                | C4H10N2O          | CCN(CC)N=O           | WBNQDOYYEUMPFS-UHFFFAOYSA-N  | CHEBI:34873;;BloodExp:CID5921;;C14422;;PMHub:MS000007343;;DTXSID2021028 | 1.0 | 0.7174501691978581 | 0.8022151184385007     |
-| 9 | ISOPROPYLUREA                        | C4H10N2O          | CC(C)NC(=N)O         | LZMATGARSSLFMQ-UHFFFAOYSA-N  | PMHub:MS000231594;;NIST:CAS691601          | 1.0            | 0.6049047550645834   | 0.7234333285452084     |
-</code></pre></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Title</th>
+<th>MolecularFormula</th>
+<th>CanonicalSMILES</th>
+<th>InChIKey</th>
+<th>Database IDs</th>
+<th>Formula Score</th>
+<th>Structure Score</th>
+<th>Consensus Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>"Acetic acid N',N'-dimethylhydrazide"</td>
+<td>C4H10N2O</td>
+<td>CC(=O)NN(C)C</td>
+<td>SLIKWWJXVUHCPJ-UHFFFAOYSA-N</td>
+<td>NIST:CAS6233041</td>
+<td>1.0</td>
+<td>0.9999999991779194</td>
+<td>0.9999999994245434</td>
+</tr>
+<tr>
+<td>1</td>
+<td>N-(2-Aminoethyl)acetamide</td>
+<td>C4H10N2O</td>
+<td>CC(=O)NCCN</td>
+<td>DAKZISABEDGGSV-UHFFFAOYSA-N</td>
+<td>PMHub:MS000036761</td>
+<td>1.0</td>
+<td>0.957735969543063</td>
+<td>0.970415178680144</td>
+</tr>
+<tr>
+<td>2</td>
+<td>N-Propylurea</td>
+<td>C4H10N2O</td>
+<td>CCCNC(N)=O</td>
+<td>ZQZJKHIIQFPZCS-UHFFFAOYSA-N</td>
+<td>BloodExp:CID12303;;HMDB0255240</td>
+<td>1.0</td>
+<td>0.940423010788881</td>
+<td>0.9582961075522167</td>
+</tr>
+<tr>
+<td>3</td>
+<td>"2-Amino-N,N-dimethylacetamide"</td>
+<td>C4H10N2O</td>
+<td>CN(C)C(=O)CN</td>
+<td>KNVRBEGQERGQRP-UHFFFAOYSA-N</td>
+<td>NIST:CAS1857198</td>
+<td>1.0</td>
+<td>0.8933594423863824</td>
+<td>0.9253516096704677</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4-Aminobutanamide</td>
+<td>C4H10N2O</td>
+<td>NCCCC(N)=O</td>
+<td>WCVPFJVXEXJFLB-UHFFFAOYSA-N</td>
+<td>NIST:CAS3251089</td>
+<td>1.0</td>
+<td>0.8222707059586819</td>
+<td>0.8755894941710773</td>
+</tr>
+<tr>
+<td>5</td>
+<td>"1,1,3-Trimethylurea"</td>
+<td>C4H10N2O</td>
+<td>CNC(=O)N(C)C</td>
+<td>COSWCAGTKRUTQV-UHFFFAOYSA-N</td>
+<td>NIST:CAS632144</td>
+<td>1.0</td>
+<td>0.7851222117039512</td>
+<td>0.8495855481927659</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Methylpropylnitrosamine</td>
+<td>C4H10N2O</td>
+<td>CCCN(C)N=O</td>
+<td>ITBDKUCVKYSWMF-UHFFFAOYSA-N</td>
+<td>BloodExp:CID13545</td>
+<td>1.0</td>
+<td>0.7422341116397019</td>
+<td>0.8195638781477912</td>
+</tr>
+<tr>
+<td>7</td>
+<td>(2S)-2-(Methylamino)propanamide</td>
+<td>C4H10N2O</td>
+<td>CN<a href="C">C@@H</a>C(N)=O</td>
+<td>QKNFFJHHPCWXTH-VKHMYHEASA-N</td>
+<td>NIST:CAS55988120</td>
+<td>1.0</td>
+<td>0.7230225309588504</td>
+<td>0.8061157716711953</td>
+</tr>
+<tr>
+<td>8</td>
+<td>N-nitrosodiethylamine</td>
+<td>C4H10N2O</td>
+<td>CCN(CC)N=O</td>
+<td>WBNQDOYYEUMPFS-UHFFFAOYSA-N</td>
+<td>CHEBI:34873;;BloodExp:CID5921;;C14422;;PMHub:MS000007343;;DTXSID2021028</td>
+<td>1.0</td>
+<td>0.7174501691978581</td>
+<td>0.8022151184385007</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ISOPROPYLUREA</td>
+<td>C4H10N2O</td>
+<td>CC(C)NC(=N)O</td>
+<td>LZMATGARSSLFMQ-UHFFFAOYSA-N</td>
+<td>PMHub:MS000231594;;NIST:CAS691601</td>
+<td>1.0</td>
+<td>0.6049047550645834</td>
+<td>0.7234333285452084</td>
+</tr>
+</tbody>
+</table></div>
 
 
 
