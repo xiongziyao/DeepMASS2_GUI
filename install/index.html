@@ -481,32 +481,33 @@
   <h1>Installation</h1>
 
 <div><h2 id="system-requirements">System Requirements</h2>
-<p><strong>Operating Systems:</strong>
-- Windows 11
-- MacOS</p>
-<p><strong>Recommended Hardware:</strong>
-- Intel Core i5 or greater
-- 16 GB RAM or more
-- 5 GB hard drive space</p>
+<p><strong>Operating Systems:</strong></p>
+<ul>
+<li>Windows 11</li>
+<li>MacOS</li>
+</ul>
+<p><strong>Recommended Hardware:</strong></p>
+<ul>
+<li>Intel Core i5 or greater</li>
+<li>16 GB RAM or more</li>
+<li>5 GB hard drive space</li>
+</ul>
 <h2 id="installation-steps">Installation Steps</h2>
 <ol>
 <li>Install <a href="https://www.anaconda.com/">Anaconda</a> or <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a>.</li>
 <li>
 <p>Create a new conda environment and activate:</p>
-<p><code>bash
-conda create -n deepmass python=3.8.13
+<p><code>conda create -n deepmass python=3.8.13
 conda activate deepmass</code></p>
 </li>
 <li>
 <p>Clone the repository and enter:</p>
-<p><code>bash
-git clone https://github.com/hcji/DeepMASS2_GUI.git
+<p><code>git clone https://github.com/hcji/DeepMASS2_GUI.git
 cd DeepMASS2_GUI</code></p>
 </li>
 <li>
 <p>Install dependencies (for <em>MacOS</em>, some dependencies may need manual installation with conda):</p>
-<p><code>bash
-pip install -r requirements.txt</code></p>
+<p><code>pip install -r requirements.txt</code></p>
 </li>
 <li>
 <p>Download the <a href="https://github.com/hcji/DeepMASS2_GUI/releases/tag/v0.99.2">dependent data</a>.</p>
@@ -534,16 +535,15 @@ please refer the next section: <strong>Training models with NIST data</strong> <
 </li>
 <li>
 <p>Run DeepMASS:</p>
-<p><code>bash
-python DeepMASS2.py</code></p>
+<p><code>python DeepMASS2.py</code></p>
 </li>
 </ol>
 <h2 id="training-models-with-nist-data">Training models with NIST data</h2>
 <p>The <a href="https://www.nist.gov/programs-projects/nist20-updates-nist-tandem-and-electron-ionization-spectral-libraries">NIST MS/MS Library</a> is not available for download directly, 
 but can be purchased from an authorized distributor and exported using the instructions below.</p>
 <h3 id="exporting-nist-data">Exporting NIST data</h3>
-<p><em>Note: this step requires a Windows System or Virtual Machine.</em>
-The spectra and associated compounds can be exported to MSP/MOL format using the free <a href="https://chemdata.nist.gov/mass-spc/ms-search/Library_conversion_tool.html">lib2nist software</a>. 
+<p><em>Note: this step requires a Windows System or Virtual Machine.</em></p>
+<p>The spectra and associated compounds can be exported to MSP/MOL format using the free <a href="https://chemdata.nist.gov/mass-spc/ms-search/Library_conversion_tool.html">lib2nist software</a>. 
 The resulting export will contain a single MSP file with all of the mass spectra, 
 and multiple MOL files which include the molecular structure information (linked to the spectra by ID). 
 The screenshot below indicates appropriate lib2nist export settings.</p>
